@@ -1,0 +1,19 @@
+.topbar {
+  height: 10rem;
+  padding: 0 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__menu {
+    display: flex;
+    gap: 2rem;
+    > .li {
+    }
+  }
+
+  &__logo {
+  }
+
+  &__user {
+  }
+}

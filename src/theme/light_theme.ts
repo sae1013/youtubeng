@@ -1,9 +1,9 @@
 const color = {
-  'bg-primary': '#f8f7f4',
-  blue: '',
-  grey: '',
+  bg: {
+    primary: '#f8f7f4',
+  },
   'black-500': '#0d0c22',
-  hover_black: '#565564',
+  'grey-500': '#565564',
 };
 const windowSize = {
   small: 'screen and (max-width: "600px")',
