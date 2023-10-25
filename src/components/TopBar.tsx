@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from './TopBar.module.scss';
 import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 function TopBar() {
-  const handleSignupBtn = () => {};
+  const navigate = useNavigate();
+  const handleSignupBtn = () => {
+    navigate('/login');
+  };
+
   return (
     <div className={styles.topbar}>
       <ul className={styles.topbar__menu}>

@@ -1,11 +1,15 @@
 import React from 'react';
-import TopBar from './components/TopBar';
+import { RouterProvider } from 'react-router-dom';
 
+import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+import TopBar from './components/TopBar';
 function App() {
   return (
-    <div className='App'>
+    <Suspense>
       <TopBar></TopBar>
-    </div>
+      <Outlet></Outlet>
+    </Suspense>
   );
 }
 
