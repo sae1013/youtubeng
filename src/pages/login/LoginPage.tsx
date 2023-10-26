@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './LoginPage.module.scss';
-import Button from '../../components/Button';
-import Divider from '../../components/Divider';
+import Button from '@/components/Button';
+import Divider from '@/components/Divider';
 
 function LoginPage() {
   return (
