@@ -1,3 +1,30 @@
-.home {
-  background-color: var(--bg-primary-color);
+.login {
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+
+  &--sidebar {
+    // 960px부터 노출 // 모바일 사이즈 ?
+    display: none;
+    @media (min-width: 960px) {
+      display: block;
+      width: 40rem;
+      background-color: azure;
+    }
+  }
+
+  &--content {
+    padding: 0 20px;
+  }
+}
+
+.auth {
+  &--content {
+    display: flex;
+    max-width: 41.6rem;
+    margin: auto;
+  }
+  &--title {
+    font-size: 2.4rem;
+  }
 }
