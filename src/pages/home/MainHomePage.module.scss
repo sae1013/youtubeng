@@ -1,4 +1,17 @@
-.home-container {
+.main-container {
   min-height: 100vh;
   background-color: $bg-primary-color;
+  display: flex;
+}
+
+.main-sidebar {
+  min-height: 100vh;
+  background-color: black;
+  width: 24rem;
+  padding: 0 1.6rem;
+}
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  background-color: pink;
 }
