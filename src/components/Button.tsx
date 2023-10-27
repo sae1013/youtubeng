@@ -39,7 +39,7 @@ export const BaseStyledButton = styled.button<Partial<BaesButtonProps>>`
     `}
 
   > span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: white;
     ${(props) =>

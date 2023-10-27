@@ -9,7 +9,11 @@ import { RiKakaoTalkFill } from 'react-icons/ri';
 function LoginPage() {
   return (
     <div className={styles.login}>
-      <section className={styles['login--sidebar']}></section>
+      <section className={styles['login--sidebar']}>
+        <video autoPlay muted loop>
+          <source src='https://cdn.dribbble.com/uploads/48292/original/30fd1f7b63806eff4db0d4276eb1ac45.mp4?1689187515'></source>
+        </video>
+      </section>
       <section className={styles['login--content']}>
         <div className={styles['auth--content']}>
           <h2 className={styles['auth--title']}>Sign up to Youtubeng</h2>

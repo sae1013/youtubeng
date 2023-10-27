@@ -11,10 +11,18 @@ const StyledDivider = styled.hr<StyledButtonProp>`
   background-color: #e7e7e9;
   color: #6e6d7a;
   text-align: center;
+  border: none;
+  height: 0.1rem;
+  font-size: 1rem;
 
-  ::after {
-    content: ${(props) => props.content && props.content};
-    display: inline;
+  &::after {
+    content: ${(props) => (props.content ? props.content : '')};
+    font-size: 1rem;
+    display: inline-block;
+    position: relative;
+
+    top: -7px;
+    padding: 0 16px;
   }
 
   ${(props) =>
@@ -29,8 +37,8 @@ interface DividerProps {
   sx?: React.CSSProperties;
 }
 
-function Divider({ content, sx }: DividerProps) {
-  return <StyledDivider content={content} sx={sx}></StyledDivider>;
+function Divider(props: DividerProps) {
+  return <StyledDivider {...props}></StyledDivider>;
 }
 
 export default Divider;
