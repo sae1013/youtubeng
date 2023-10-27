@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './LoginPage.module.scss';
+import IconButton from '@/components/IconButton';
 import Button from '@/components/Button';
 import Divider from '@/components/Divider';
+import { FcGoogle } from 'react-icons/fc';
+import { RiKakaoTalkFill } from 'react-icons/ri';
 
 function LoginPage() {
   return (
@@ -10,24 +13,30 @@ function LoginPage() {
       <section className={styles['login--content']}>
         <div className={styles['auth--content']}>
           <h2 className={styles['auth--title']}>Sign up to Youtubeng</h2>
-          <Button
-            shape='round'
-            sx={{
+          <IconButton
+            icon={FcGoogle}
+            iconPosition='left'
+            buttonSx={{
+              width: '100%',
               height: '5.6rem',
-              fontSize: '1.4rem',
             }}>
             Sign up with Google
-          </Button>
+          </IconButton>
+
           <Divider content='or'></Divider>
-          <Button
+
+          <IconButton
+            icon={RiKakaoTalkFill}
+            iconPosition='left'
             shape='round'
-            sx={{
+            buttonSx={{
+              width: '100%',
               height: '5.6rem',
-              fontSize: '1.4rem',
               backgroundColor: '#fee500',
-            }}>
+            }}
+            textSx={{ color: '#000' }}>
             Sign up with Kakao
-          </Button>
+          </IconButton>
         </div>
       </section>
     </div>

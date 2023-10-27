@@ -1,13 +1,16 @@
 import React from 'react';
 import styles from './TopBar.module.scss';
 import Button from './Button';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function TopBar() {
   const navigate = useNavigate();
   const handleSignupBtn = () => {
     navigate('/login');
   };
+  const { pathname } = useLocation();
+
+  if (pathname === '/login') return null;
 
   return (
     <div className={styles.topbar}>

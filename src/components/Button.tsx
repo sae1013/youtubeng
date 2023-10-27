@@ -37,26 +37,23 @@ export const BaseStyledButton = styled.button<Partial<BaesButtonProps>>`
     css`
       ${createCSSString(props.buttonSx)}
     `}
+
+  > span {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    ${(props) =>
+      props.textSx &&
+      css`
+        ${createCSSString(props.textSx)}
+      `};
+  }
 `;
 
-export interface BaseStyledButtonTextProps {
-  textSx?: CSSProperties;
-}
-
-export const BaseStyledButtonText = styled.span<BaseStyledButtonTextProps>`
-  font-weight: 800;
-  color: white;
-
-  ${(props) =>
-    props.textSx &&
-    css`
-      ${createCSSString(props.textSx)}
-    `}
-`;
-export default function Button({ children, onClick, textSx, buttonSx, ...props }: BaesButtonProps) {
+export default function Button({ children, onClick, ...props }: BaesButtonProps) {
   return (
-    <BaseStyledButton onClick={onClick} buttonSx={buttonSx}>
-      <BaseStyledButtonText textSx={textSx}>{children}</BaseStyledButtonText>
+    <BaseStyledButton onClick={onClick} {...props}>
+      <span>{children}</span>
     </BaseStyledButton>
   );
 }
