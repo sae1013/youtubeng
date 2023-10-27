@@ -1,25 +1,27 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import styled, { CSSProperties, css } from 'styled-components';
+import { createCSSString } from './utils/helper';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface BaesButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   shape?: 'default' | 'round';
   onClick?: () => void;
-  sx?: React.CSSProperties;
+  sx?: CSSProperties;
+  buttonSx?: CSSProperties;
+  textSx?: CSSProperties;
 }
 
-const StyledButton = styled.button<Partial<ButtonProps>>`
+export const BaseStyledButton = styled.button<Partial<BaesButtonProps>>`
   background-color: ${(props) => props.theme.color['black-500']};
   box-sizing: border-box;
   border-radius: ${(props) => (props.shape === 'round' ? '5rem' : '2rem')};
   cursor: pointer;
   border: none;
-  color: white;
   padding: 0 2.4rem;
 
   transition: all 0.2s ease;
   &:hover {
-    background-color: ${(props) => props.theme.color['grey-500']};
+    opacity: 0.7;
     &:not(:disabled) {
       box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
         0px 1px 10px 0px rgba(0, 0, 0, 0.12);
@@ -30,12 +32,31 @@ const StyledButton = styled.button<Partial<ButtonProps>>`
     color: #666666;
     cursor: default;
   }
-  ${(props) => (props.sx ? css(props.sx as any) : css({}))}
+  ${(props) =>
+    props.buttonSx &&
+    css`
+      ${createCSSString(props.buttonSx)}
+    `}
 `;
-export default function Button({ children, onClick, ...props }: ButtonProps) {
+
+export interface BaseStyledButtonTextProps {
+  textSx?: CSSProperties;
+}
+
+export const BaseStyledButtonText = styled.span<BaseStyledButtonTextProps>`
+  font-weight: 800;
+  color: white;
+
+  ${(props) =>
+    props.textSx &&
+    css`
+      ${createCSSString(props.textSx)}
+    `}
+`;
+export default function Button({ children, onClick, textSx, buttonSx, ...props }: BaesButtonProps) {
   return (
-    <StyledButton onClick={onClick} {...props}>
-      {children}
-    </StyledButton>
+    <BaseStyledButton onClick={onClick} buttonSx={buttonSx}>
+      <BaseStyledButtonText textSx={textSx}>{children}</BaseStyledButtonText>
+    </BaseStyledButton>
   );
 }
