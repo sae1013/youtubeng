@@ -13,7 +13,7 @@ function TopBar() {
   if (pathname === '/login') return null;
 
   return (
-    <div className={styles.topbar}>
+    <div className={styles.topbar__container}>
       <ul className={styles.topbar__menu}>
         <li>검색</li>
         <li>검색</li>
