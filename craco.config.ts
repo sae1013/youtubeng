@@ -4,7 +4,7 @@ module.exports = {
   style: {
     sass: {
       loaderOptions: {
-        additionalData: `@import "${path.resolve(__dirname, 'src/theme/variables.module.scss')}";`,
+        additionalData: `@import "${path.resolve(__dirname, 'src/theme/variables.scss')}";`,
       },
     },
   },
