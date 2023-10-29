@@ -1,12 +1,14 @@
 .topbar__container {
   background-color: $bg-primary-color;
-  height: 10rem;
+  height: $header-height;
   padding: 0 2.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
+  width: 100vw;
   top: 0;
+  z-index: 100;
 }
 .topbar__menu {
   display: flex;

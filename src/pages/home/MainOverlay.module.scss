@@ -1,0 +1,13 @@
+.main-overlay-container {
+  position: fixed;
+  top: calc($header-height);
+  z-index: 30;
+  background-color: black;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.main-overlay-contents {
+}

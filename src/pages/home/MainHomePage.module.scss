@@ -2,26 +2,29 @@
   min-height: 100vh;
   background-color: $bg-primary-color;
   display: flex;
+  padding-top: 10rem;
 }
 
 .main-sidebar {
-  min-height: 100vh;
-  width: 24rem;
+  width: $min-guide-sideb-bar;
   padding: 0 1.6rem;
-
+  position: sticky;
+  z-index: 1000;
+  left: 0;
+  top: 10rem;
+  height: 100vh;
+  background-color: white;
   .sidebar-wrapper {
     padding: 0 1rem;
-    position: sticky;
-    top: 10rem;
   }
   .sidebar-menu-wrapper {
   }
 }
 .main-content {
   flex: 1;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: scroll;
   background-color: pink;
-  overflow-y: scroll;
 
   &-video {
     margin-top: 3rem;
