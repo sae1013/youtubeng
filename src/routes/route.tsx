@@ -3,7 +3,6 @@ import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import MainHomePage from '../pages/home/MainHomePage';
 import LoginPage from '../pages/login/LoginPage';
 import App from '../App';
-import ScrollTest from '@/components/ScrollTest';
 export const routerBuilder = () => {
   const childRoutes = (): RouteObject[] => {
     return [
